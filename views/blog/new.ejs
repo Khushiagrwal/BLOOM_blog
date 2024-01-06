@@ -1,0 +1,67 @@
+<% layout('layouts/boilerplate') %>
+<%- include('../partials/navbar') %>
+<br><br>
+<div>
+    <form action="/blogs" class="max-auto row g-3 needs-validation" method="post" novalidate>
+        <div>
+        <label for="name"> Title:</label>
+            <input type="text" name="name" placeholder="Name of the product" required>
+<br>    <div class="valid-feedback">
+            Looks good!
+        </div>
+        <div class="invalid-feedback">
+            Please choose a Productname.
+        </div>
+        </div>
+        <div>
+        <label for="image"> Image:</label>
+            <input type="text" name="image" placeholder="Upload image of the product" required>
+        
+        <div class="valid-feedback">
+            Looks good!
+        </div>
+        <div class="invalid-feedback">
+            Please enter a url.
+        </div>
+        </div>
+        <div>
+        <label for="content">Content:</label>
+            <input type="text" name="content" placeholder="Content of the Blog" required> 
+        <br>    
+        <div class="valid-feedback">
+            Looks good!
+        </div>
+        <div class="invalid-feedback">
+            Please choose a Product content.
+        </div>
+        </div>
+        <div>
+        <br>
+        <button class="btn btn-success" type="submit">Add Blogs</button>
+        </div>
+    </form>
+</div>
+<script>
+    (function () {
+  'use strict'
+
+  // Fetch all the forms we want to apply custom Bootstrap validation styles to
+  var forms = document.querySelectorAll('.needs-validation')
+
+  // Loop over them and prevent submission
+  Array.prototype.slice.call(forms)
+    .forEach(function (form) {
+      form.addEventListener('submit', function (event) {
+        if (!form.checkValidity()) {
+          event.preventDefault()
+          event.stopPropagation()
+        }
+
+        form.classList.add('was-validated')
+      }, false)
+    })
+})()
+</script>
+<%- include('../partials/footer') %>
+</body>
+</html>

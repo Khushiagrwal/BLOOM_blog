@@ -1,0 +1,44 @@
+<% layout('layouts/boilerplate') %>
+    <%- include('../partials/navbar') %>
+
+        <div style="background-color: #fffbf2;">
+
+            <ul>
+
+                <div class="detail-section">
+                    <h1>
+                        <%=foundProduct.name%>
+                    </h1>
+                    <br>
+                    <div class="detail-section-img">
+                        <img style="height:50%; margin-left:100px "  src="<%=foundProduct.image%>" alt="">
+                    </div>
+                    <div class="detail-section-text">
+
+                        <br>
+                        <span> <%=foundProduct.content%></span>
+                        </h3>
+                        <br>
+                           <h3><a href="/blog/<%=foundProduct._id%>/edit"
+                                style="text-decoration: none;color:blue; ">Edit</a></h3>
+                                
+                                <form action="/user/<%=foundProduct._id%>/add" method="post" ">
+                                    <!-- <button type=" submit">Add Product to cart</button> -->
+                                    <!-- <button type="submit" class="btn btn-secondary">Add Blog</button> -->
+                                    <br>
+                            </form>
+
+                    </div>
+                </div>
+                <div>
+                    <br><br>
+                </div>
+            </ul>
+            <br>
+
+
+        </div>
+        <%- include('../partials/footer') %>
+            </body>
+
+            </html>

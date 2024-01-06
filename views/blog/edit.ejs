@@ -1,0 +1,66 @@
+<% layout('layouts/boilerplate') %>
+<%- include('../partials/navbar') %>
+<br><br>
+<div>
+    <form action="/blog/<%=foundProduct._id%>?_method=patch" class="max-auto needs-validation" method="post"  novalidate>
+        <div>
+        <label for="name"> Name:</label>
+            <input type="text" name="name" placeholder="Name of the product" value="<%=foundProduct.name%>" required>
+<br>    
+        <div class="valid-feedback">
+        Looks good!
+        </div>
+        <div class="invalid-feedback">
+        Please enter a url.
+        </div> 
+        </div>
+        
+        <div>
+        <label for="image"> Image:</label>
+            <input type="text" name="image" placeholder="Upload image of the product" value="<%=foundProduct.image%>" required>
+        <br>
+        <div class="valid-feedback">
+            Looks good!
+        </div>
+        <div class="invalid-feedback">
+            Please enter a url.
+        </div>
+        </div>
+
+        <div>
+        <label for="content"> content:</label>
+            <input type="text" name="content" placeholder="content of the product" value="<%=foundProduct.content%>" required> 
+        <br>
+        <div class="valid-feedback">
+            Looks good!
+        </div>
+        <div class="invalid-feedback">
+            Please enter a url.
+        </div>
+        </div>
+        <button>Edit Blog</button>
+    </form>
+</div>
+<script>
+    (function () {
+  'use strict'
+
+  // Fetch all the forms we want to apply custom Bootstrap validation styles to
+  var forms = document.querySelectorAll('.needs-validation')
+
+  // Loop over them and prevent submission
+  Array.prototype.slice.call(forms)
+    .forEach(function (form) {
+      form.addEventListener('submit', function (event) {
+        if (!form.checkValidity()) {
+          event.preventDefault()
+          event.stopPropagation()
+        }
+
+        form.classList.add('was-validated')
+      }, false)
+    })
+})()
+</script>
+<%- include('../partials/footer') %>
+</body>

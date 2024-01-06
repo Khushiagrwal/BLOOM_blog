@@ -1,0 +1,37 @@
+<% layout('layouts/boilerplate') %>
+<%- include('../partials/navbar') %> 
+
+    <style>
+        hr {
+            color: grey;
+        }
+        button a{
+            color: black;
+        }
+        a:hover {
+            color: white;
+        }
+    </style>
+<body style="background-color: #fffbf2;">
+        <div class="row" style="display: flex;width: 100%; padding: 40px;">
+            <%for(let item of products){%>
+                <ul style="margin-left:40px;">
+                    <h1><%=item.name%></h1>
+                    <br>
+                    <img style="height:50%; margin-left:100px " src="<%=item.image%>" alt="">
+                    <br>
+                    <span><%=item.content%></span>
+                    <br> 
+                    <a href="/blog/<%=item._id%>" style=" color:blue;">VIEW > <%=item.name%> Blog</a>
+                    <form action="/blog/<%=item._id%>?_method=delete" method="post">
+                        <br>
+                    <button class="btn btn-danger" >Delete</button>
+                    </form>
+                </ul>
+             
+            <%}%>
+        </div>
+
+        <br>  
+    <%- include('../partials/footer') %>
+</body>

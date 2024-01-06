@@ -1,0 +1,25 @@
+<% layout('layouts/boilerplate') %>
+<div class="container">
+    <form action="/register"  method="post" >
+       <div class="container">
+            <h1>Signup</h1>
+            <input   name="username" type="text" placeholder="Name">
+            <input   name="email" type="email" placeholder="Email">
+            <input   name="password" type="password" placeholder="Password"><br>
+            <label for="" type="text"> Gender :
+            <div class="mx-2">
+                <label  class="form-control" for="">Male   :
+                <input type="radio" class="form-check-input" name="gender" id="Male" value="male" > </label> 
+            </div>
+            <div class="mx-2">
+                <label  class="form-control" for="">Female   :
+                <input type="radio" class="form-check-input" name="gender" id="Female" value="female">  </label>
+            </div>
+            </label>
+            <input   name="aadharNumber" type="number" placeholder="aadharNumber"><br>
+            <input   name="phoneNumber" type="number" placeholder="phoneNumber:"><br>
+            <input type="checkbox"><span>I accept terms and conditions</span>
+            <button type="submit">SignUp</button>
+        </form>
+    </div>
+  </div>
